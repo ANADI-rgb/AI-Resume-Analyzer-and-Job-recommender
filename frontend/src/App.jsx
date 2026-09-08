@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Results from "./pages/Results";
@@ -13,7 +13,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* PUBLIC */}
+        {/* =========================
+            PUBLIC ROUTES
+        ========================= */}
 
         <Route
           path="/"
@@ -21,24 +23,41 @@ export default function App() {
         />
 
         <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
           path="/register"
           element={<Register />}
         />
 
-        {/* RESUME RESULTS */}
-
         <Route
-          path="/results"
-          element={<Results />}
+          path="/login"
+          element={<Login />}
         />
 
-        {/* JOB RECOMMENDATIONS */}
 
+        {/* =========================
+            PROTECTED ROUTES
+        ========================= */}
+
+        {/* Dashboard / Resume Upload */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Resume Analysis Results */}
+        <Route
+          path="/results"
+          element={
+            <ProtectedRoute>
+              <Results />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Matching Jobs */}
         <Route
           path="/jobs"
           element={
@@ -48,15 +67,14 @@ export default function App() {
           }
         />
 
-        {/* PROTECTED DASHBOARD */}
+
+        {/* =========================
+            FALLBACK
+        ========================= */}
 
         <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
+          path="*"
+          element={<Navigate to="/" replace />}
         />
 
       </Routes>
