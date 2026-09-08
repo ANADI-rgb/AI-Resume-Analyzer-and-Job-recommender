@@ -1,0 +1,11 @@
+job_id,job_title,category,skills_required
+1,Data Scientist,AI,"Python,SQL,Pandas"
+2,Backend Developer,Software,"Python,Flask,Docker"
+3,Frontend Developer,Software,"JavaScript,React,CSS"
+4,Machine Learning Engineer,AI,"Python,TensorFlow,PyTorch"
+5,DevOps Engineer,Software,"AWS,Docker,Kubernetes"
+6,Product Manager,Management,"Agile,Scrum,Leadership"
+7,UX Designer,Design,"Figma,Adobe XD,User Research"
+8,Data Analyst,Data,"SQL,Excel,Tableau"
+9,Cloud Architect,Cloud,"AWS,Azure,GCP"
+10,Mobile App Developer,Software,"Swift,Kotlin,React Native"
